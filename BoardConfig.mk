@@ -117,8 +117,9 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.angler
 
 TARGET_RECOVERY_FSTAB = device/huawei/angler/fstab.angler
+
 # write vendor modules to system
-TARGET_COPY_OUT_VENDOR := system
+TARGET_COPY_OUT_VENDOR := vendor
 TARGET_RELEASETOOLS_EXTENSIONS := device/huawei/angler
 
 BOARD_SEPOLICY_DIRS += \
@@ -152,12 +153,12 @@ BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
 # Testing related defines
 BOARD_PERFSETUP_SCRIPT := platform_testing/scripts/perf-setup/angler-setup.sh
 
-USE_CLANG_PLATFORM_BUILD := true
-
 # CMHW
 BOARD_USES_CYANOGEN_HARDWARE := true
 BOARD_HARDWARE_CLASS := \
     hardware/cyanogen/cmhw \
     device/huawei/angler/cmhw
+
+USE_CLANG_PLATFORM_BUILD := true
 
 -include vendor/huawei/angler/BoardConfigVendor.mk

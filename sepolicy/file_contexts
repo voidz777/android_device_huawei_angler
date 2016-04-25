@@ -176,6 +176,5 @@
 /sys/devices/virtual/timed_output/vibrator/vmax_mv_light                   u:object_r:sysfs_vibrator:s0
 /sys/devices/virtual/timed_output/vibrator/vmax_mv_strong                  u:object_r:sysfs_vibrator:s0
 
-
 # Sysfs files used by nanoapp_cmd
 /sys/devices/virtual/nanohub/nanohub(/.*)? u:object_r:sysfs_nanoapp_cmd:s0

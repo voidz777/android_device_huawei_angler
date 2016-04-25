@@ -767,5 +767,6 @@ struct power_module HAL_MODULE_INFO_SYM = {
     .setInteractive = set_interactive,
     .get_number_of_platform_modes = get_number_of_platform_modes,
     .get_platform_low_power_stats = get_platform_low_power_stats,
-	.get_voter_list = get_voter_list
+    .get_voter_list = get_voter_list,
+    .setFeature = set_feature
 };

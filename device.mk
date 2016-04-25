@@ -19,6 +19,8 @@
 #
 # Everything in this directory will become public
 
+# Enable support for chinook sensorhub
+TARGET_USES_CHINOOK_SENSORHUB := false
 
 PRODUCT_COPY_FILES += \
     device/huawei/angler/init.angler.rc:root/init.angler.rc \
@@ -202,18 +204,17 @@ PRODUCT_PACKAGES += \
     libmmcamera_interface2 \
     libmmjpeg_interface \
     libqomx_core \
-    mm-qcamera-app \
-    Snap
+    mm-qcamera-app
 
-# Build ims-ext-common package
-PRODUCT_PACKAGES += \
-    ims-ext-common
+# Snap (Snapdragon) camera
+#PRODUCT_PACKAGES += \
+#    Snap
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.cpp.duplication=false
 
 # Gello
-PRODUCT_PACKAGES += \
+# PRODUCT_PACKAGES += \
     Gello
 
 # GPS
@@ -281,6 +282,10 @@ PRODUCT_COPY_FILES += \
 
 DEVICE_PACKAGE_OVERLAYS := \
     device/huawei/angler/overlay
+
+# Allow tethering without provisioning app
+PRODUCT_PROPERTY_OVERRIDES += \
+    net.tethering.noprovisioning=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196610
@@ -359,10 +364,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # If data_no_toggle is 1 then dormancy indications will come with screen off.
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.data_no_toggle=1
-
-# Allow tethering without provisioning app
-PRODUCT_PROPERTY_OVERRIDES += \
-    net.tethering.noprovisioning=true
 
 # Ril sends only one RIL_UNSOL_CALL_RING, so set call_ring.multiple to false
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -468,7 +469,6 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xxxhdpi-3072-hwu
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
-  
 # facelock properties
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.facelock.black_timeout=700 \
@@ -496,22 +496,6 @@ $(call inherit-product-if-exists, vendor/qcom/gpu/msm8994/msm8994-gpu-vendor.mk)
 
 # copy wlan firmware
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4358/device-bcm.mk)
-
-
-# only include verity on user builds for CM
-ifeq ($(TARGET_BUILD_VARIANT),user)
-   PRODUCT_COPY_FILES += device/huawei/angler/fstab-verity.angler:root/fstab.angler
-
-  # setup dm-verity configs.
-  PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/soc.0/f9824900.sdhci/by-name/system
-  # don't check verity on vendor partition as we don't compile it with the boot and system image
-  # PRODUCT_VENDOR_VERITY_PARTITION := /dev/block/platform/soc.0/f9824900.sdhci/by-name/vendor
-  $(call inherit-product, build/target/product/verity.mk)
-endif
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp,adb \
-    ro.adb.secure=0 \
 
 # GPS configuration
 PRODUCT_COPY_FILES += \
