@@ -421,3 +421,7 @@ ifeq ($(TARGET_BUILD_VARIANT),user)
   # PRODUCT_VENDOR_VERITY_PARTITION := /dev/block/platform/soc.0/f9824900.sdhci/by-name/vendor
   $(call inherit-product, build/target/product/verity.mk)
 endif
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp,adb \
+    ro.adb.secure=0 \
