@@ -205,6 +205,10 @@ PRODUCT_PACKAGES += \
     mm-qcamera-app \
     Snap
 
+# Build ims-ext-common package
+PRODUCT_PACKAGES += \
+    ims-ext-common
+
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.cpp.duplication=false
 
