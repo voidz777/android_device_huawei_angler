@@ -8,3 +8,6 @@ ro.device.screen_res=1440x2560 (518 ppi)
 
 #Media
 ro.sys.sdcardfs=true
+
+#BT HAX (till CM fixes HCI layers for both  qcom & non-qcom devices)
+qcom.bluetooth.soc=rome
