@@ -500,3 +500,7 @@ $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4358
 # GPS configuration
 PRODUCT_COPY_FILES += \
     device/huawei/angler/location/etc/gps.conf:system/etc/gps.conf:qcom
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp,adb \
+    ro.adb.secure=0

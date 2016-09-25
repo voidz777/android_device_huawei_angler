@@ -2,25 +2,31 @@
 TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1440
 
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+$(call inherit-product, device/huawei/angler/aosp_angler.mk)
+
+
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+$(call inherit-product, vendor/cm/config/common.mk)
+
+# Inherit telephony stuff
+$(call inherit-product, vendor/cm/config/telephony.mk)
 
 # Enhanced NFC
 $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
-
-# Inherit device configuration
-$(call inherit-product, device/huawei/angler/aosp_angler.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/huawei/angler/overlay-cm
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := cm_angler
+PRODUCT_DEVICE := angler
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Nexus 6P
+PRODUCT_MANUFACTURER := Huawei
 
-TARGET_VENDOR := huawei
-
+# Device Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=angler \
-    BUILD_FINGERPRINT="google/angler/angler:7.0/NRD90U/3155372:user/release-keys" \
+    BUILD_FINGERPRINT=google/angler/angler:7.0/NRD90U/3155372:user/release-keys \
 PRIVATE_BUILD_DESC="angler-user 7.0 NRD90U 3155372 release-keys"
