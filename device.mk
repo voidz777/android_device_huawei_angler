@@ -388,16 +388,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicecall=false \
     persist.audio.fluence.voicecomm=true \
     persist.audio.product.identify="angler" \
-    persist.audio.fluence.speaker=true \
-    audio.offload.buffer.size.kb=32 \
-    audio.offload.video=true \
-    audio.offload.multiple.enabled=false \
-    audio.offload.gapless.enabled=true \
-    audio.offload.pcm.16bit.enable=true \
-    audio.offload.pcm.24bit.enable=true
-
-# Enable enhanced offload features
-AUDIO_FEATURE_ENABLED_FLAC_OFFLOAD := true
+    persist.audio.fluence.speaker=true
 
 # Enable AAC 5.1 output
 PRODUCT_PROPERTY_OVERRIDES += \
