@@ -15,6 +15,9 @@ PRODUCT_MODEL := Nexus 6P
 
 TARGET_VENDOR := huawei
 
+# Enable real time lockscreen charging current values
+BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=angler \
     BUILD_FINGERPRINT=google/angler/angler:7.1.1/N4F26J/3549317:user/release-keys \
