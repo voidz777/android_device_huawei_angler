@@ -222,8 +222,8 @@ PRODUCT_PACKAGES += \
     gps.msm8994
 
 # Gello
-#PRODUCT_PACKAGES += \
-#    Gello
+PRODUCT_PACKAGES += \
+    Gello
 
 # Extra packages we can compile from source
 PRODUCT_PACKAGES += \
@@ -249,6 +249,9 @@ else
 PRODUCT_PACKAGES += \
     nanoapp_cmd
 endif
+
+# Dont Build Magisk
+AVOID_MAGISK := true
 
 # sensor utilities (only for userdebug and eng builds)
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
