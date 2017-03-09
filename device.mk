@@ -222,8 +222,8 @@ PRODUCT_PACKAGES += \
     gps.msm8994
 
 # Gello
-PRODUCT_PACKAGES += \
-    Gello
+#PRODUCT_PACKAGES += \
+#    Gello
 
 # Extra packages we can compile from source
 PRODUCT_PACKAGES += \
