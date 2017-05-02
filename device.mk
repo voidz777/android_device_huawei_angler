@@ -225,9 +225,9 @@ PRODUCT_PACKAGES += \
     libgps.utils \
     gps.msm8994
 
-# Gello
-#PRODUCT_PACKAGES += \
-#    Gello
+# Jelly
+PRODUCT_PACKAGES += \
+    Jelly
 
 # Extra packages we can compile from source
 PRODUCT_PACKAGES += \
