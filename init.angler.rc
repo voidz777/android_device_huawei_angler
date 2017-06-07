@@ -281,6 +281,7 @@ on charger
    write /sys/devices/system/cpu/cpu7/online 0
 
 on property:sys.boot_completed=1
+     setprop vendor.post_boot.parsed 1
      #allow CPUs to go in deeper idle state than C0
      write /sys/module/lpm_levels/parameters/sleep_disabled 0
      #end boot time fs tune
