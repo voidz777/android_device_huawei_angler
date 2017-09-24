@@ -466,5 +466,4 @@
 
     <!-- Whether the device needs axis inversion for the fingerprint notification panel gesture when rotated -->
     <bool name="config_needsFingerprintAxisInversion">true</bool>
-
 </resources>
