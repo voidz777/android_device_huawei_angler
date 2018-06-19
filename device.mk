@@ -19,6 +19,9 @@
 #
 # Everything in this directory will become public
 
+# Setting vendor SPL
+VENDOR_SECURITY_PATCH = "2018-12-05"
+
 # Enable support for chinook sensorhub
 TARGET_USES_CHINOOK_SENSORHUB := false
 
@@ -367,10 +370,6 @@ PRODUCT_PACKAGES += \
 #USB HAL
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
-
-#Vendor Patch Level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2018-10-05
 
 # Library used for VTS tests  (only for userdebug and eng builds)
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
