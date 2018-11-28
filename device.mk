@@ -694,3 +694,6 @@ $(call add-product-sanitizer-module-config,qmuxd,never)
 # ship STK
 PRODUCT_PACKAGES += \
     Stk
+
+# Netd
+TARGET_OMIT_NETD_TETHER_FTP_HELPER := true
