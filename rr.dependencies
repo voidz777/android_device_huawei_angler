@@ -1,0 +1,12 @@
+[
+ {
+   "repository": "voidz777/android_kernel_huawei_angler",
+   "target_path": "kernel/huawei/angler"
+   "branch": "pie"
+ },
+  {
+   "repository": "voidz777/proprietary_vendor_huawei",
+   "target_path": "vendor/huawei",
+   "branch": "pie"
+  }
+]
