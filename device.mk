@@ -699,3 +699,10 @@ PRODUCT_PACKAGES += \
 
 # Netd
 TARGET_OMIT_NETD_TETHER_FTP_HELPER := true
+
+# USB debugging at boot
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.sys.usb.config=mtp,adb \
+ro.adb.secure=0 \
+ro.secure=0 \
+ro.debuggable=1
