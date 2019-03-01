@@ -538,15 +538,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Low latency audio buffer size in frames
 PRODUCT_PROPERTY_OVERRIDES += \
-    audio_hal.period_size=192
+    vendor.audio_hal.period_size=192
 
 #for qcom modify fluence type name, here added and enable
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qc.sdk.audio.fluencetype="fluence" \
-    persist.audio.fluence.voicecall=true \
-    persist.audio.fluence.voicecomm=true \
+    ro.vendor.audio.sdk.fluencetype="fluence" \
+    persist.vendor.audio.fluence.voicecall=true \
+    persist.vendor.audio.fluence.voicecomm=true \
     persist.audio.product.identify="angler" \
-    persist.audio.fluence.speaker=true
+    persist.venndor.audio.fluence.speaker=true
 
 # Default OMX service to non-Treble
 PRODUCT_PROPERTY_OVERRIDES += \
