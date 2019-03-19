@@ -180,9 +180,6 @@ BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
 # Graphics
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x02000000U
 
-#NFC
-NXP_CHIP_TYPE := 2
-
 # Testing related defines
 BOARD_PERFSETUP_SCRIPT := platform_testing/scripts/perf-setup/angler-setup.sh
 
